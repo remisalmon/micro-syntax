@@ -1,0 +1,35 @@
+filetype: dockerfile
+
+detect:
+  filename: "Dockerfile$"
+
+rules:
+  # https://docs.docker.com/reference/dockerfile/#overview
+  - statement: "(?i)^\\s*(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME
+  WORKDIR)"
+
+  - statement: "(?i)\\sAS\\s"
+
+  # https://docs.docker.com/reference/dockerfile/#environment-replacement
+  - constant: "\\$\\w+"
+
+  - constant: "\\$\\{[^}]+\\}"
+
+  # strings
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  # https://docs.docker.com/reference/dockerfile/#format
+  - comment:
+      start: "^\\s*#"
+      end: "$"
+      rules: []

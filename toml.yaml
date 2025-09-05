@@ -1,0 +1,55 @@
+filetype: toml
+
+detect:
+  filename: "\\.toml$"
+
+rules:
+  # https://toml.io/en/v1.0.0#boolean
+  - constant: "\\b(true|false)\\b"
+
+  # https://toml.io/en/v1.0.0#integer
+  # https://toml.io/en/v1.0.0#float
+  - constant: "[+-]?\\d+(\\.\\d+)?([eE][+-]?\\d+)?"
+
+  # https://toml.io/en/v1.0.0#keys
+  - statement:
+      start: "^\\s*[\\w\\s\\.\"'-]+\\s*="
+      end: "\\s*"
+      rules: []
+
+  # https://toml.io/en/v1.0.0#table
+  - identifier:
+      start: "^\\s*\\[+[\\w\\s\\.\"'-]+\\]+"
+      end: "\\s*"
+      rules: []
+
+  # https://toml.io/en/v1.0.0#string
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "\"\"\""
+      end: "\"\"\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'''"
+      end: "'''"
+      skip: "\\\\."
+      rules: []
+
+  # https://toml.io/en/v1.0.0#comment
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []

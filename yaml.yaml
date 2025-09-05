@@ -1,0 +1,44 @@
+filetype: yaml
+
+detect:
+  filename: "\\.y(a)?ml$"
+  header: "^%YAML 1\\.[0-2]\\s*$"
+
+rules:
+  # https://yaml.org/spec/1.2.2/#681-yaml-directives
+  - comment: "^%YAML 1\\.[0-2](\\s|$)"
+
+  # https://yaml.org/spec/1.2.2/#22-structures
+  - special: "^---(\\s|$)"
+  - special: "^\\.\\.\\.(\\s|$)"
+
+  # https://yaml.org/spec/1.2.2/#103-core-schema
+  - constant: "\\b(null|Null|NULL|~|true|True|TRUE|false|False|FALSE)\\b"
+  - constant: "\\.(nan|NaN|NAN)"
+
+  # https://yaml.org/spec/1.2.2/#81-block-scalar-styles
+  - constant: "\\s[|>][+-]?(\\d)?\\s*$"
+
+  # https://yaml.org/spec/1.2.2/#23-scalars
+  # https://yaml.org/spec/1.2.2/#733-plain-style
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  # https://yaml.org/spec/1.2.2/#21-collections
+  - statement: "^\\s*(-\\s)*[^][}{,@`]+:(\\s|$)"
+  - statement: "^\\s*(-\\s+)+"
+
+  # https://yaml.org/spec/1.2.2/#66-comments
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []

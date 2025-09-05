@@ -1,0 +1,64 @@
+filetype: python
+
+detect:
+  filename: "\\.py$"
+  header: "^#!.*/(env +)?python(3)?( |$)"
+
+rules:
+  # https://docs.python.org/3/reference/lexical_analysis.html#keywords
+  - statement: "\\b(and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\\b"
+
+  # https://docs.python.org/3/reference/lexical_analysis.html#soft-keywords
+  - statement: "\\b(match|case|type|_)\\b"
+
+  # https://docs.python.org/3/library/constants.html#built-in-consts
+  - constant: "\\b(False|True|None|NotImplemented|Ellipsis|__debug__)\\b"
+
+  # https://docs.python.org/3/library/exceptions.html#bltin-exceptions
+  - constant: "\\b(BaseException|BaseExceptionGroup|GeneratorExit|KeyboardInterrupt|SystemExit|Exception)\\b"
+  - constant: "\\b(ArithmeticError|FloatingPointError|OverflowError|ZeroDivisionError|AssertionError|AttributeError|BufferError|EOFError|ExceptionGroup|ImportError|ModuleNotFoundError|LookupError|IndexError|KeyError|MemoryError|NameError|UnboundLocalError|OSError|BlockingIOError|ChildProcessError|ConnectionError|BrokenPipeError|ConnectionAbortedError|ConnectionRefusedError|ConnectionResetError|FileExistsError|FileNotFoundError|InterruptedError|IsADirectoryError|NotADirectoryError|PermissionError|ProcessLookupError|TimeoutError|ReferenceError|RuntimeError|NotImplementedError|RecursionError|StopAsyncIteration|StopIteration|SyntaxError|IndentationError|TabError|SystemError|TypeError|ValueError|UnicodeError|UnicodeDecodeError|UnicodeEncodeError|UnicodeTranslateError)\\b"
+  - constant: "\\b(Warning|BytesWarning|DeprecationWarning|EncodingWarning|FutureWarning|ImportWarning|PendingDeprecationWarning|ResourceWarning|RuntimeWarning|SyntaxWarning|UnicodeWarning|UserWarning)\\b"
+
+  # https://docs.python.org/3/library/stdtypes.html#bltin-types
+  - type: "\\b(bool|int|float|complex|list|tuple|range|str|bytes|bytearray|memoryview|set|frozenset|dict)\\b"
+
+  # https://docs.python.org/3/library/functions.html#built-in-funcs
+  - identifier: "\\b(abs|aiter|all|anext|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)\\("
+
+  - default: "(\\.[a-z_]+)?\\("
+
+  - identifier: "^\\s*@[A-Za-z_]\\w*(\\.[A-Za-z_]\\w*)*"
+
+  # https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals
+  - constant: "\\b\\d+(_\\d)*(\\.\\d*(_\\d)*)?([eE][+-]?\\d+)?[jJ]?\\b"
+
+  # https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+  - constant.string:
+      start: "[rR]?[bfBF]?\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "[rR]?[bfBF]?'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "[rR]?[bfBF]?\"\"\""
+      end: "\"\"\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "[rR]?[bfBF]?'''"
+      end: "'''"
+      skip: "\\\\."
+      rules: []
+
+  # https://docs.python.org/3/reference/lexical_analysis.html#comments
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []

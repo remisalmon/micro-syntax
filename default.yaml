@@ -1,0 +1,22 @@
+filetype: default
+
+detect:
+  filename: ""
+
+rules:
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  - comment:
+      start: "^\\s*#"
+      end: "$"
+      rules: []
