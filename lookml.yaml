@@ -1,0 +1,32 @@
+filetype: lookml
+
+detect:
+  filename: "\\.lkml$"
+
+rules:
+  - constant: "\\b[+-]?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b"
+
+  - constant: "\\b(yes|no)\\b"
+
+  - identifier: "\\$\\{[^}]*\\}"
+
+  - statement: "^\\s*(-\\s+)?\\w+\\s*:"
+
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
+      skip: "\\\\."
+      rules: []
+
+  - comment: ";;"
+
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []
