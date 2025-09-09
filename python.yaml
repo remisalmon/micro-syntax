@@ -34,18 +34,6 @@ rules:
 
   # https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
   - constant.string:
-      start: "[rR]?[bfBF]?\""
-      end: "\""
-      skip: "\\\\."
-      rules: []
-
-  - constant.string:
-      start: "[rR]?[bfBF]?'"
-      end: "'"
-      skip: "\\\\."
-      rules: []
-
-  - constant.string:
       start: "[rR]?[bfBF]?\"\"\""
       end: "\"\"\""
       skip: "\\\\."
@@ -54,6 +42,18 @@ rules:
   - constant.string:
       start: "[rR]?[bfBF]?'''"
       end: "'''"
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "[rR]?[bfBF]?\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "[rR]?[bfBF]?'"
+      end: "'"
       skip: "\\\\."
       rules: []
 

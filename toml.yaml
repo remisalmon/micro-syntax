@@ -25,18 +25,6 @@ rules:
 
   # https://toml.io/en/v1.0.0#string
   - constant.string:
-      start: "\""
-      end: "\""
-      skip: "\\\\."
-      rules: []
-
-  - constant.string:
-      start: "'"
-      end: "'"
-      skip: "\\\\."
-      rules: []
-
-  - constant.string:
       start: "\"\"\""
       end: "\"\"\""
       skip: "\\\\."
@@ -45,6 +33,18 @@ rules:
   - constant.string:
       start: "'''"
       end: "'''"
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+      rules: []
+
+  - constant.string:
+      start: "'"
+      end: "'"
       skip: "\\\\."
       rules: []
 
