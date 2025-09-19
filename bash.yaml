@@ -17,6 +17,9 @@ rules:
 
   - statement: "\\b(case|do|done|elif|else|esac|fi|for|function|if|in|select|then|time|until|while)\\b"
 
+  - default: "\\s-(-)?[\\w-]+"
+  - default: "\\.\\w+"
+
   # https://www.gnu.org/software/bash/manual/bash.html#Parameter-and-Variable-Index
   - constant: "\\$[!#$*0?@_-]"
 

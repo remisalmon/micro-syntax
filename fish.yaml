@@ -11,6 +11,9 @@ rules:
   # https://fishshell.com/docs/current/commands.html#keywords
   - statement: "\\b(if|else|end|for|in|while|break|continue|function|return|begin|and|or|not|switch|case|command|builtin|time|exec)\\b"
 
+  - default: "\\s-(-)?[\\w-]+"
+  - default: "\\.\\w+"
+
   # https://fishshell.com/docs/current/language.html#escaping-characters
   - special: "[]$*?~#(){}[<>&|;\"']"
 
