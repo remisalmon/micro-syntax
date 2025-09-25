@@ -13,7 +13,7 @@ rules:
   - identifier: "\\b(alias|bg|bind|break|builtin|caller|cd|command|compgen|complete|compopt|continue|declare|dirs|disown|echo|enable|eval|exec|exit|export|fc|fg|getopts|hash|help|history|jobs|kill|let|local|logout|mapfile|popd|printf|pushd|pwd|read|readarray|readonly|return|set|shift|shopt|source|suspend|test|times|trap|type|typeset|ulimit|umask|unalias|unset|wait)\\b"
 
   # https://www.gnu.org/software/bash/manual/bash.html#Index-of-Shell-Reserved-Words
-  - statement: "(! |\\[\\[ | \\]\\]|\\{ |; \\})"
+  - statement: "(!\\s|\\[\\[\\s|\\s\\]\\]|\\{\\s|;\\s\\})"
 
   - statement: "\\b(case|do|done|elif|else|esac|fi|for|function|if|in|select|then|time|until|while)\\b"
 
