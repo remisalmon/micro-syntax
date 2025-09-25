@@ -1,0 +1,9 @@
+filetype: csv
+
+detect:
+  filename: "\\.csv$"
+
+rules:
+  - identifier: ","
+
+  - constant.string: "\"([^\"]|\\\")*\""
