@@ -16,20 +16,9 @@ rules:
   - constant: "\\$\\{[^}]+\\}"
 
   # strings
-  - constant.string:
-      start: "\""
-      end: "\""
-      skip: "\\\\."
-      rules: []
+  - constant.string: "\"([^\\\\\"]|\\\\.)*\""
 
-  - constant.string:
-      start: "'"
-      end: "'"
-      skip: "\\\\."
-      rules: []
+  - constant.string: "'([^\\\\']|\\\\.)*'"
 
   # https://docs.docker.com/reference/dockerfile/#format
-  - comment:
-      start: "^\\s*#"
-      end: "$"
-      rules: []
+  - comment: "^\\s*#.*$"
