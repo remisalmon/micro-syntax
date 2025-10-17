@@ -1,25 +1,25 @@
 filetype: terraform
 
 detect:
-  filename: "\\.tf(vars)?$"
+  filename: "\\.tf(vars|backend)?$"
 
 rules:
-  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#literal-values
-  - constant: "\\b(true|false|null)\\b"
-
-  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#numeric-literals
-  - constant: "\\b\\d+(\\.\\d)?([eE][+-]?\\d+)?\\b"
-
   # https://developer.hashicorp.com/terraform/language/syntax/configuration#blocks
-  - identifier: "^\\s*[A-Za-z_-][\\w-]*\\s*"
-
-  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#for-expressions
-  - constant: "\\b(for|in|if)\\b"
+  - identifier: "^\\s*[A-Za-z_-][\\w-]*\\s"
 
   # https://developer.hashicorp.com/terraform/language/syntax/configuration#arguments
   - statement: "^\\s*[A-Za-z_-][\\w-]*\\s*="
 
-  - default: "[={]"
+  - default: "="
+
+  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#literal-values
+  - constant: "\\b(true|false|null)\\b"
+
+  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#for-expressions
+  - constant: "\\b(for|in|if)\\b"
+
+  # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#numeric-literals
+  - constant: "\\b\\d+(\\.\\d)?([eE][+-]?\\d+)?\\b"
 
   # https://developer.hashicorp.com/terraform/language/expressions/strings#quoted-strings
   - constant.string:
