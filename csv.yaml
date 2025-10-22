@@ -6,4 +6,7 @@ detect:
 rules:
   - identifier: ","
 
-  - constant.string: "\"([^\"]|\\\")*\""
+  - constant.string:
+      start: "\""
+      end: "\""
+      rules: []
