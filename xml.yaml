@@ -1,0 +1,24 @@
+filetype: xml
+
+detect:
+  filename: "\\.xml$"
+
+rules:
+  # https://www.w3.org/TR/REC-xml/#sec-starttags
+  - statement: "<[^> ]+"
+
+  - default: "(</?|/?>)"
+
+  - identifier: " [^<=]+="
+
+  - constant.string: "\"([^\\\\\"]|\\\\.)*\""
+  - constant.string: "'([^\\\\']|\\\\.)*'"
+
+  # https://www.w3.org/TR/REC-xml/#sec-rmd
+  - comment: "^<\\?xml.*\\?> *$"
+
+  # # https://www.w3.org/TR/REC-xml/#sec-comments
+  - comment:
+      start: "^ *<!--"
+      end: "--> *$"
+      rules: []
