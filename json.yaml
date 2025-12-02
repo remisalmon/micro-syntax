@@ -6,7 +6,6 @@ detect:
 rules:
   # https://www.json.org/json-en.html
   - constant: "\\b(true|false|null)\\b"
-
   - constant: "-?\\d+(\\.\\d+)?([eE][+-]?\\d+)?"
 
   - constant.string: "\"([^\\\\\"]|\\\\.)*\""

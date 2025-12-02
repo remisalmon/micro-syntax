@@ -38,19 +38,16 @@ rules:
       end: "\"\"\""
       skip: "\\\\."
       rules: []
-
   - constant.string:
       start: "[rR]?[bfBF]?'''"
       end: "'''"
       skip: "\\\\."
       rules: []
-
   - constant.string:
       start: "[rR]?[bfBF]?\""
       end: "\""
       skip: "\\\\."
       rules: []
-
   - constant.string:
       start: "[rR]?[bfBF]?'"
       end: "'"

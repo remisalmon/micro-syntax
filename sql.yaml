@@ -17,7 +17,6 @@ rules:
       start: "\""
       end: "\""
       rules: []
-
   - constant.string:
       start: "'"
       end: "'"
@@ -28,7 +27,6 @@ rules:
       start: "--"
       end: "$"
       rules: []
-
   - comment:
       start: "/\\*"
       end: "\\*/"

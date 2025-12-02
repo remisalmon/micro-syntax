@@ -5,7 +5,6 @@ detect:
 
 rules:
   - constant: "\\b[+-]?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b"
-
   - constant: "\\b(yes|no)\\b"
 
   - identifier: "\\$\\{[^}]*\\}"
@@ -17,7 +16,6 @@ rules:
       end: "\""
       skip: "\\\\."
       rules: []
-
   - constant.string:
       start: "'"
       end: "'"
@@ -25,7 +23,6 @@ rules:
       rules: []
 
   - comment: ";;"
-
   - comment:
       start: "#"
       end: "$"

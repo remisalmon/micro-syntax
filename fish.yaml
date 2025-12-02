@@ -31,7 +31,6 @@ rules:
       end: "\""
       skip: "\\\\."
       rules: []
-
   - constant.string:
       start: "'"
       end: "'"
