@@ -12,6 +12,10 @@ rules:
 
   - default: "\\("
 
+  # bindings
+  - constant: "%(\\(\\w+\\))?s"
+  - constant: "(\\?|:\\d)"
+
   # strings
   - constant.string:
       start: "\""
