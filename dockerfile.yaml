@@ -5,8 +5,8 @@ detect:
 
 rules:
   # https://docs.docker.com/reference/dockerfile/#overview
-  - statement: "(?i)^\\s*(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)"
-  - statement: "(?i)\\sAS\\s"
+  - special: "(?i)^\\s*(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)"
+  - special: "(?i)\\sAS\\s"
 
   # https://docs.docker.com/reference/dockerfile/#environment-replacement
   - constant: "\\$\\w+"

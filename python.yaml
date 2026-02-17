@@ -6,10 +6,10 @@ detect:
 
 rules:
   # https://docs.python.org/3/reference/lexical_analysis.html#keywords
-  - statement: "\\b(and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\\b"
+  - special: "\\b(and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\\b"
 
   # https://docs.python.org/3/reference/lexical_analysis.html#soft-keywords
-  - statement: "\\b(match|case|type|_)\\b"
+  - special: "\\b(match|case|type|_)\\b"
 
   # https://docs.python.org/3/library/constants.html#built-in-consts
   - constant: "\\b(False|True|None|NotImplemented|Ellipsis|__debug__)\\b"
@@ -23,11 +23,12 @@ rules:
   - type: "\\b(bool|int|float|complex|list|tuple|range|str|bytes|bytearray|memoryview|set|frozenset|dict)\\b"
 
   # https://docs.python.org/3/library/functions.html#built-in-funcs
-  - identifier: "\\b(abs|aiter|all|anext|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)\\("
+  - statement: "\\b(abs|aiter|all|anext|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)\\("
 
   - default: "(\\.[a-z_]+)?\\("
 
-  - identifier: "^\\s*@[A-Za-z_]\\w*(\\.[A-Za-z_]\\w*)*"
+  - type: "^\\s*@[A-Za-z_]\\w*(\\.[A-Za-z_]\\w*)*"
+  - type: "\\bself\\b"
 
   # https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals
   - constant: "\\b\\d+(_\\d)*(\\.\\d*(_\\d)*)?([eE][+-]?\\d+)?[jJ]?\\b"

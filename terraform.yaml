@@ -5,18 +5,21 @@ detect:
 
 rules:
   # https://developer.hashicorp.com/terraform/language/syntax/configuration#blocks
-  - identifier: "^\\s*[A-Za-z_-][\\w-]*\\s"
+  - special: "^\\s*[A-Za-z_-][\\w-]*\\s"
 
   # https://developer.hashicorp.com/terraform/language/syntax/configuration#arguments
-  - statement: "^\\s*[A-Za-z_-][\\w-]*\\s*="
+  - identifier: "^\\s*[A-Za-z_-][\\w-]*\\s*="
 
   - default: "="
+
+  # https://developer.hashicorp.com/terraform/language/functions
+  - statement: "(\\w+\\(|\\))"
 
   # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#literal-values
   - constant: "\\b(true|false|null)\\b"
 
   # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#for-expressions
-  - constant: "\\b(for|in|if)\\b"
+  - special: "\\b(for|in|if)\\b"
 
   # https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md#numeric-literals
   - constant: "\\b\\d+(\\.\\d)?([eE][+-]?\\d+)?\\b"

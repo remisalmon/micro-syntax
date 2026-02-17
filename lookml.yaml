@@ -7,9 +7,9 @@ rules:
   - constant: "\\b[+-]?\\d+(\\.\\d*)?([eE][+-]?\\d+)?\\b"
   - constant: "\\b(yes|no)\\b"
 
-  - identifier: "\\$\\{[^}]*\\}"
+  - special: "\\$\\{[^}]*\\}"
 
-  - statement: "^\\s*(-\\s+)?\\w+\\s*:"
+  - identifier: "^\\s*(-\\s+)?\\w+\\s*:"
 
   - constant.string:
       start: "\""

@@ -4,7 +4,7 @@ detect:
   filename: "\\.csv$"
 
 rules:
-  - identifier: ","
+  - special: ","
 
   - constant.string:
       start: "\""

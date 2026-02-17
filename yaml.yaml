@@ -17,7 +17,11 @@ rules:
   - constant: "\\.(nan|NaN|NAN)"
 
   # https://yaml.org/spec/1.2.2/#81-block-scalar-styles
-  - constant: "\\s[|>][+-]?(\\d)?\\s*$"
+  - special: "\\s[|>][+-]?(\\d)?\\s*$"
+
+  # https://yaml.org/spec/1.2.2/#21-collections
+  - identifier: "^\\s*(-\\s)*[^][}{,@`]+:(\\s|$)"
+  - identifier: "^\\s*(-\\s+)+"
 
   # https://yaml.org/spec/1.2.2/#23-scalars
   # https://yaml.org/spec/1.2.2/#733-plain-style
@@ -31,10 +35,6 @@ rules:
       end: "'"
       skip: "\\\\."
       rules: []
-
-  # https://yaml.org/spec/1.2.2/#21-collections
-  - statement: "^\\s*(-\\s)*[^][}{,@`]+:(\\s|$)"
-  - statement: "^\\s*(-\\s+)+"
 
   # https://yaml.org/spec/1.2.2/#66-comments
   - comment:
