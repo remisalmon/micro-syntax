@@ -15,9 +15,9 @@ rules:
   - special: "(!\\s|\\[\\[\\s|\\s\\]\\]|\\{\\s|;\\s\\})"
   - special: "\\b(case|do|done|elif|else|esac|fi|for|function|if|in|select|then|time|until|while)\\b"
 
-  - default: "\\s-(-)?[\\w-]+"
+  - default: "--?[\\w-]+"
+  - default: "\\w+[=-]"
   - default: "\\.\\w+"
-  - default: "\\w+="
 
   # https://www.gnu.org/software/bash/manual/bash.html#index-control-operator
   # https://www.gnu.org/software/bash/manual/bash.html#index-metacharacter
