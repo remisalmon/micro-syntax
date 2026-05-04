@@ -25,11 +25,13 @@ rules:
 
   # https://yaml.org/spec/1.2.2/#23-scalars
   # https://yaml.org/spec/1.2.2/#733-plain-style
+  - constant.string: "\"([^\\\\\"]|\\\\.)*\""
   - constant.string:
       start: "(^|\\s)\""
       end: "\""
       skip: "\\\\."
       rules: []
+  - constant.string: "'([^\\\\']|\\\\.)*'"
   - constant.string:
       start: "(^|\\s)'"
       end: "'"
@@ -38,6 +40,6 @@ rules:
 
   # https://yaml.org/spec/1.2.2/#66-comments
   - comment:
-      start: "#"
+      start: "(^|\\s)#"
       end: "$"
       rules: []
