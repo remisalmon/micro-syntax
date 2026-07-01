@@ -5,7 +5,7 @@ detect:
 
 rules:
   # https://www.w3.org/TR/REC-xml/#sec-starttags
-  - statement: "<[^> ]+"
+  - type: "<[^> ]+"
 
   - default: "(</?|/?>)"
 
