@@ -1,0 +1,16 @@
+filetype: portfile
+
+detect:
+  filename: "Portfile$"
+
+rules:
+  - identifier: "^[\\w\\.-]+(\\s|$)"
+
+  - constant: "\\$\\{[\\w\\.]+\\}"
+
+  - constant.string:
+      start: "\""
+      end: "\""
+      skip: "\\\\."
+
+  - comment: "^#.*$"
