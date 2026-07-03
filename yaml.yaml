@@ -30,16 +30,13 @@ rules:
       start: "(^|\\s)\""
       end: "\""
       skip: "\\\\."
-      rules: []
   - constant.string: "'([^\\\\']|\\\\.)*'"
   - constant.string:
       start: "(^|\\s)'"
       end: "'"
       skip: "\\\\."
-      rules: []
 
   # https://yaml.org/spec/1.2.2/#66-comments
   - comment:
       start: "(^|\\s)#"
       end: "$"
-      rules: []

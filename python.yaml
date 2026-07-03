@@ -38,25 +38,20 @@ rules:
       start: "[rR]?[bfBF]?\"\"\""
       end: "\"\"\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "[rR]?[bfBF]?'''"
       end: "'''"
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "[rR]?[bfBF]?\""
       end: "\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "[rR]?[bfBF]?'"
       end: "'"
       skip: "\\\\."
-      rules: []
 
   # https://docs.python.org/3/reference/lexical_analysis.html#comments
   - comment:
       start: "#"
       end: "$"
-      rules: []

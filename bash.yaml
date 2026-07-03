@@ -44,20 +44,16 @@ rules:
       start: "\""
       end: "\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "'"
       end: "'"
-      rules: []
 
   # https://www.gnu.org/software/bash/manual/bash.html#Comments
   - comment:
       start: "(^|\\s)#"
       end: "$"
-      rules: []
 
   # https://www.gnu.org/software/bash/manual/bash.html#Here-Documents
   - default:
       start: "<<(-)?EO."
       end: "EO."
-      rules: []

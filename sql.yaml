@@ -21,27 +21,21 @@ rules:
       start: "\""
       end: "\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "'"
       end: "'"
       skip: "\\\\."
-      rules: []
 
   # comments
   - comment:
       start: "--"
       end: "$"
-      rules: []
   - comment:
       start: "//"
       end: "$"
-      rules: []
   - comment:
       start: "/\\*"
       end: "\\*/"
-      rules: []
   - comment:
       start: "\\{#"
       end: "#\\}"
-      rules: []

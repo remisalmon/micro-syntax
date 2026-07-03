@@ -11,7 +11,6 @@ rules:
   - constant:
       start: "^\\s*>"
       end: "^\\s*$"
-      rules: []
 
   # https://daringfireball.net/projects/markdown/syntax#list
   - special: "^\\s*[*+-]\\s"
@@ -37,14 +36,11 @@ rules:
   - comment:
       start: "^\\s*<!--"
       end: "-->\\s*$"
-      rules: []
 
   # https://github.github.com/gfm/#code-fence
   - constant:
       start: "^\\s*```"
       end: "^\\s*```"
-      rules: []
   - constant:
       start: "^\\s*~~~"
       end: "^\\s*~~~"
-      rules: []

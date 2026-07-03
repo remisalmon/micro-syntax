@@ -28,16 +28,13 @@ rules:
       start: "\""
       end: "\""
       skip: "\\\\."
-      rules: []
 
   # https://developer.hashicorp.com/terraform/language/style#comments
   - comment:
       start: "(^|\\s)#"
       end: "$"
-      rules: []
 
   # https://developer.hashicorp.com/terraform/language/expressions/strings#heredoc-strings
   - default:
       start: "<<(-)?EO."
       end: "EO."
-      rules: []

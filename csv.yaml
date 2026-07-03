@@ -9,4 +9,3 @@ rules:
   - constant.string:
       start: "\""
       end: "\""
-      rules: []

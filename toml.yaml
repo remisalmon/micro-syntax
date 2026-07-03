@@ -15,38 +15,31 @@ rules:
   - identifier:
       start: "^\\s*([\\w-]|\"([^\\\\\"]|\\\\.)*\"|'([^\\\\']|\\\\.)*'|\\s*\\.\\s*)+\\s*="
       end: "\\s*"
-      rules: []
 
   # https://toml.io/en/v1.0.0#table
   - type:
       start: "^\\s*\\[+([\\w-]|\"([^\\\\\"]|\\\\.)*\"|'([^\\\\']|\\\\.)*'|\\s*\\.\\s*)+\\]+"
       end: "\\s*"
-      rules: []
 
   # https://toml.io/en/v1.0.0#string
   - constant.string:
       start: "\"\"\""
       end: "\"\"\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "'''"
       end: "'''"
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "\""
       end: "\""
       skip: "\\\\."
-      rules: []
   - constant.string:
       start: "'"
       end: "'"
       skip: "\\\\."
-      rules: []
 
   # https://toml.io/en/v1.0.0#comment
   - comment:
       start: "#"
       end: "$"
-      rules: []
