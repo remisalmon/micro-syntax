@@ -1,0 +1,50 @@
+filetype: markdown
+
+detect:
+  filename: "\\.md$"
+
+rules:
+  # https://daringfireball.net/projects/markdown/syntax#header
+  - identifier: "^#+\\s.+$"
+
+  # https://daringfireball.net/projects/markdown/syntax#blockquote
+  - constant:
+      start: "^\\s*>"
+      end: "^\\s*$"
+      rules: []
+
+  # https://daringfireball.net/projects/markdown/syntax#list
+  - special: "^\\s*[*+-]\\s"
+  - special: "^\\s*[0-9]+\\.\\s"
+
+  # https://daringfireball.net/projects/markdown/syntax#precode
+  - constant: "^\\s{4,}.+$"
+
+  # https://daringfireball.net/projects/markdown/syntax#hr
+  - special: "^([*-]\\s?){3,}\\s*$"
+
+  # https://daringfireball.net/projects/markdown/syntax#link
+  # https://daringfireball.net/projects/markdown/syntax#img
+  - statement: "!?\\[[^]]+\\]"
+
+  # https://daringfireball.net/projects/markdown/syntax#code
+  - constant: "`.*`"
+
+  # https://daringfireball.net/projects/markdown/syntax#html
+  - constant: "<[^>]+>"
+
+  # https://daringfireball.net/projects/markdown/syntax#html
+  - comment:
+      start: "^\\s*<!--"
+      end: "-->\\s*$"
+      rules: []
+
+  # https://github.github.com/gfm/#code-fence
+  - constant:
+      start: "^\\s*```"
+      end: "^\\s*```"
+      rules: []
+  - constant:
+      start: "^\\s*~~~"
+      end: "^\\s*~~~"
+      rules: []
