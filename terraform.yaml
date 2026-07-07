@@ -13,7 +13,7 @@ rules:
   - default: "="
 
   # https://developer.hashicorp.com/terraform/language/functions
-  - statement: "\\w+\\("
+  - statement: "[0-9a-z]+\\("
 
   - default: "\\("
 
