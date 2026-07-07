@@ -2,7 +2,7 @@ filetype: python
 
 detect:
   filename: "\\.py$"
-  header: "^#!.*/(env +)?python(3)?( |$)"
+  header: "^#!.*/(env +)?python3?( |$)"
 
 rules:
   # https://docs.python.org/3/reference/lexical_analysis.html#keywords

@@ -1,7 +1,7 @@
 filetype: yaml
 
 detect:
-  filename: "\\.y(a)?ml$"
+  filename: "\\.ya?ml$"
   header: "^%YAML 1\\.[0-2]\\s*$"
 
 rules:

@@ -55,5 +55,5 @@ rules:
 
   # https://www.gnu.org/software/bash/manual/bash.html#Here-Documents
   - default:
-      start: "<<(-)?EO."
+      start: "<<-?EO."
       end: "EO."

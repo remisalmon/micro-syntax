@@ -36,5 +36,5 @@ rules:
 
   # https://developer.hashicorp.com/terraform/language/expressions/strings#heredoc-strings
   - default:
-      start: "<<(-)?EO."
+      start: "<<-?EO."
       end: "EO."

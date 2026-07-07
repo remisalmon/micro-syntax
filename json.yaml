@@ -1,7 +1,7 @@
 filetype: json
 
 detect:
-  filename: "\\.json(l)?$"
+  filename: "\\.jsonl?$"
 
 rules:
   # https://www.json.org/json-en.html
